@@ -7,12 +7,12 @@ class LoginPage(BasePage):
         assert "login" in self.browser.current_url, f"\nExpected 'login' in {self.browser.current_url}"
 
     def should_be_login_form(self):
-        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "login is not presented"
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "login form is not presented!"
         #assert self.is_element_present(*LoginPageLocators.LOGIN_FORM_EMAIL), "email field is not presented"
         #assert self.is_element_present(*LoginPageLocators.LOGIN_FORM_PASSWORD), "password field is not presented"
 
     def should_be_register_form(self):
-        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "registration is not presented"
+        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "registration form is not presented!"
         #assert self.is_element_present(*LoginPageLocators.REGISTER_FORM_EMAIL), "email field is not presented"
         #assert self.is_element_present(*LoginPageLocators.REGISTER_FORM_PASSWORD), "password field is not presented"
         #assert self.is_element_present(*LoginPageLocators.REGISTER_FORM_REPEAT_PASSWORD), "repeat_password field is not presented"

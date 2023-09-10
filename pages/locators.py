@@ -13,3 +13,10 @@ class LoginPageLocators():
     #REGISTER_FORM_EMAIL = (By.CSS_SELECTOR, "input[name='registration-email']")
     #REGISTER_FORM_PASSWORD = (By.CSS_SELECTOR, "input[name='registration-password1']")
     #REGISTER_FORM_REPEAT_PASSWORD = (By.CSS_SELECTOR, "input[name='registration-password2']")
+
+class ProductPageLocators():
+    BASKET_ADD = (By.CSS_SELECTOR, "#add_to_basket_form button")
+    BASKET_ITEM = (By.CSS_SELECTOR, "#messages div:nth-child(1) strong")
+    BASKET_TOTAl = (By.CSS_SELECTOR, "#messages  p:nth-child(1) strong")
+    BOOK_NAME = (By.CSS_SELECTOR, "#content_inner h1")
+    BOOK_PRICE = (By.CSS_SELECTOR, "#content_inner p.price_color")

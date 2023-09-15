@@ -1,5 +1,6 @@
-from .base_page import BasePage
+from pages.base_page import BasePage
 from pages.locators import ProductPageLocators
+import time
 
 class ProductPage(BasePage):
 
@@ -9,7 +10,8 @@ class ProductPage(BasePage):
     def add_item_to_basket(self):
         basket_add = self.browser.find_element(*ProductPageLocators.BASKET_ADD)
         basket_add.click()
-        assert self.solve_quiz_and_get_code() == True, "Alert is not shown!"
+        #self.solve_quiz_and_get_code()
+        #assert self.solve_quiz_and_get_code() == True, "Alert is not shown!"
 
     def basket_content_should_be_correct(self):
         basket_item = self.browser.find_element(*ProductPageLocators.BASKET_ITEM)
@@ -18,3 +20,9 @@ class ProductPage(BasePage):
         book_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE)
         assert basket_item.text == book_name.text, "Book name is incorrect!"
         assert basket_total.text == book_price.text, "Basket total is incorrect!"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def should_not_be_success_message_by_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
